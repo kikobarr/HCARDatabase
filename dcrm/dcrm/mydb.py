@@ -5,7 +5,7 @@ try:
     dataBase = mariadb.connect(
         host="localhost",
         user="root",
-        password="password123"
+        password="password1"
     )
 
     # Prepare a cursor object

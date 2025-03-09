@@ -4,18 +4,10 @@
 
 <!--bootstrap for centering-->
 <div class="col-md-6 offset-md">
-    {{foo}}
 
     {% if user.is_authenticated %}
 
-    <!-- show search form  -->
-    <form method="get">
-
-<!--        {{myFilter.form}}-->
-
-        <button class="btn btn-primary" type="submit" >Search</button>
-    </form>
-    <h1>User is authenticated page</h1>
+    <h1>HCAR Search Tool Home</h1>
 
     {% else %}
 
@@ -25,10 +17,10 @@
         {% csrf_token %}
         <div class="mb-3">
             <input type="text" class="form-control" aria-describedby="emailHelp" name="username" placeholder="Username"
-                   required="required">
+                   required="required" />
         </div>
         <div class="mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required" />
         </div>
         <button type="submit" class="btn btn-primary">Log In</button>
     </form>

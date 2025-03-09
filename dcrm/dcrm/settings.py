@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'kikodb',
         'USER': 'root',
-        'PASSWORD': 'password123',
+        'PASSWORD': 'password1',
         'HOST': 'localhost',
         'PORT': '3306'
     }
