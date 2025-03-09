@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{ artist_profile.artist_fname }} {{ artist_profile.artist_lname }} </h1>
+
+<ul>
+	<li> {{ artist_profile.artist_phone }} </li>
+	<li>  {{ artist_profile.artist_email }}  </li>
+</ul>
+
+<p><a href="//{{ artist_profile.artist_site }}">{{ artist_profile.artist_site }}</a></p>
+
+<p class="biography">
+	{{ artist_profile.artist_bio }}
+</p>
+
+{% endblock %}

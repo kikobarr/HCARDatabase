@@ -5,7 +5,6 @@ from .filters import ArtistFilter
 from .models import *
 
 
-
 def home(request):
     # corresponds with home.html <form method="POST" action="{% url 'home' %}">
     # if the action is POST
@@ -54,4 +53,29 @@ def artists(request):
     return render(request, 'artists.html', {'artists': artists})
     return redirect('artists')
 
+# ADDED THIS ONE
+def art(request):
+    art = Artwork.objects.all()
+    return render(request, 'artworks.html', {'art': art})
+    return redirect('art')
 
+
+# ADDED THIS ONE 
+def artist_profile(request, pk):
+    if request.user.is_authenticated:
+        # look up artist
+        artist_profile = Artist.objects.get(artist_id=pk)
+        return render(request, 'artist.html', {'artist_profile': artist_profile})
+    else:
+        messages.success(request, "You Must Be Logged In To View That Page")
+        return redirect('home')
+
+# ADDED THIS ONE 
+def artwork_profile(request, pk):
+    if request.user.is_authenticated:
+        # look up artwork
+        artwork_profile = Artwork.objects.get(art_num=pk)
+        return render(request, 'artwork.html', {'artwork_profile': artwork_profile})
+    else:
+        messages.success(request, "You Must Be Logged In To View That Page")
+        return redirect('home')
